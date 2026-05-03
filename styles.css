@@ -466,6 +466,129 @@ h3 {
 .diagram-node.agent { background: rgba(20,37,44,0.38); }
 .diagram-line { height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
 
+.examples-hero {
+  min-height: 48vh;
+  padding: 6rem 0 3rem;
+  border-bottom: 1px solid var(--line);
+}
+.examples-hero h1 {
+  max-width: 980px;
+  margin-bottom: 1.4rem;
+}
+.examples-hero .hero-lede { max-width: 760px; }
+
+.example-list {
+  display: grid;
+  gap: 1px;
+  padding: 4rem 0 2rem;
+}
+.example-case {
+  display: grid;
+  grid-template-columns: minmax(360px, 1fr) minmax(0, 0.95fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  min-height: 34rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 16% 18%, rgba(198,161,91,0.13), transparent 18rem),
+    linear-gradient(135deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015));
+}
+.example-case.reverse { grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1fr); }
+.example-case.reverse .example-art { order: 2; }
+.example-case.reverse .example-copy { order: 1; }
+.example-art {
+  position: relative;
+  min-height: 28rem;
+  border: 1px solid rgba(244,239,231,0.13);
+  background:
+    radial-gradient(circle at 70% 24%, rgba(240,210,138,0.18), transparent 9rem),
+    linear-gradient(145deg, rgba(20,37,44,0.66), rgba(6,6,7,0.88));
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.example-art::before {
+  content: '';
+  position: absolute;
+  inset: 1.15rem;
+  border: 1px solid rgba(244,239,231,0.08);
+  background-image: linear-gradient(rgba(244,239,231,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(244,239,231,0.05) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+.logo-frame {
+  position: absolute;
+  left: 1.5rem;
+  top: 1.5rem;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 12rem;
+  min-height: 6rem;
+  padding: 1rem;
+  border: 1px solid rgba(244,239,231,0.14);
+  background: rgba(255,255,255,0.92);
+}
+.logo-frame img { display: block; max-width: 100%; height: auto; }
+.case-screen {
+  position: absolute;
+  z-index: 1;
+  left: 8%;
+  right: 8%;
+  bottom: 8%;
+  padding: 1rem;
+  border: 1px solid rgba(244,239,231,0.16);
+  background: rgba(8,8,10,0.78);
+  backdrop-filter: blur(16px);
+}
+.case-row {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.85rem;
+  margin-top: 0.65rem;
+  border: 1px solid rgba(244,239,231,0.10);
+  background: rgba(255,255,255,0.025);
+}
+.case-row.active { border-color: rgba(240,210,138,0.35); background: rgba(198,161,91,0.08); }
+.case-row small { color: var(--muted); }
+.example-copy p {
+  max-width: 39rem;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+.example-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.8rem; }
+.case-note {
+  color: var(--gold-2);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.example-copy .card-label {
+  font-family: var(--sans);
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+.music-art {
+  background:
+    radial-gradient(circle at 35% 25%, rgba(240,210,138,0.20), transparent 10rem),
+    radial-gradient(circle at 80% 70%, rgba(88,29,32,0.34), transparent 14rem),
+    linear-gradient(145deg, rgba(31,22,28,0.88), rgba(6,6,7,0.9));
+}
+.music-mark {
+  position: absolute;
+  z-index: 1;
+  left: 1.7rem;
+  top: 0.7rem;
+  color: rgba(240,210,138,0.72);
+  font-family: var(--serif);
+  font-size: 8rem;
+  line-height: 1;
+}
+.music-screen { top: 8rem; bottom: auto; }
+.examples-contact { margin-top: 3rem; }
+
 .contact-section {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -488,7 +611,8 @@ h3 {
 }
 
 @media (max-width: 980px) {
-  .hero, .showcase-copy, .contact-section { grid-template-columns: 1fr; }
+  .hero, .showcase-copy, .contact-section, .example-case, .example-case.reverse { grid-template-columns: 1fr; }
+  .example-case.reverse .example-art, .example-case.reverse .example-copy { order: initial; }
   .hero { padding-top: 3rem; }
   .hero-visual { min-height: 560px; }
   .icon-strip { grid-template-columns: 1fr; }
@@ -512,6 +636,12 @@ h3 {
   .moon { width: 4.2rem; height: 4.2rem; right: 2.2rem; top: 2.4rem; }
   .metric-grid strong { font-size: 2.25rem; }
   .visual-icon { height: 9rem; }
+  .examples-hero { padding-top: 4rem; }
+  .example-case { padding: 1rem; }
+  .example-art { min-height: 25rem; }
+  .logo-frame { width: 10rem; }
+  .music-mark { font-size: 6.5rem; }
+  .case-screen { left: 5%; right: 5%; }
   .contact-section h2 { font-size: clamp(2.5rem, 13vw, 4rem); }
   .site-footer { flex-direction: column; width: min(100% - 28px, 1180px); }
 }

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Examples of Code D'If software systems paired with maintained AI agents." />
+  <meta name="theme-color" content="#060607" />
+  <title>Examples — Code D'If</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="Code D'If home">
+      <span class="brand-mark">D'IF</span>
+      <span class="brand-text">Code D'If</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#how">How</a>
+      <a href="examples.html">Examples</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="examples-hero section-shell">
+      <p class="eyebrow">Examples</p>
+      <h1>Software systems with agents attached.</h1>
+      <p class="hero-lede">
+        Code D'If pairs purpose-built software with named AI agents that help operate, monitor, and improve the system around the business.
+      </p>
+    </section>
+
+    <section class="section-shell example-list" aria-label="Code D'If examples">
+      <article class="example-case lighthouse-case">
+        <div class="example-art">
+          <div class="logo-frame sscc-logo-frame">
+            <img src="assets/sscc-logo.png" alt="SSCC logo" />
+          </div>
+          <div class="case-screen">
+            <div class="window-bar"><span></span><span></span><span></span><em>Lighthouse</em></div>
+            <div class="case-row active"><b>Program registration</b><small>Families browse and enroll</small></div>
+            <div class="case-row"><b>Admin workflow</b><small>Enrollment, pricing, rosters</small></div>
+            <div class="case-row"><b>Maestro agent</b><small>Support and maintenance layer</small></div>
+          </div>
+        </div>
+        <div class="example-copy">
+          <span class="card-label">Lighthouse + Maestro</span>
+          <h2>SSCC enrollment software with the Maestro agent.</h2>
+          <p>
+            Lighthouse helps families browse programs and manage enrollment for South Shore Children's Chorus. Maestro is the agent layer: a maintained assistant for support, operations, and system upkeep.
+          </p>
+          <div class="example-actions">
+            <a class="button primary" href="http://enroll.sscchorus.org">Visit enrollment</a>
+            <span class="case-note">Agent: Maestro</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="example-case boyer-case reverse">
+        <div class="example-art music-art">
+          <div class="music-mark" aria-hidden="true">𝄞</div>
+          <div class="case-screen music-screen">
+            <div class="window-bar"><span></span><span></span><span></span><em>Les Boyer Sisters</em></div>
+            <div class="case-row active"><b>Concert presence</b><small>Performances, recordings, booking</small></div>
+            <div class="case-row"><b>Content updates</b><small>Site, messages, announcements</small></div>
+            <div class="case-row"><b>Marguerite agent</b><small>A dedicated assistant in their voice</small></div>
+          </div>
+        </div>
+        <div class="example-copy">
+          <span class="card-label">Les Boyer Sisters + Marguerite</span>
+          <h2>Artist website with a dedicated Marguerite agent.</h2>
+          <p>
+            Les Boyer Sisters has a public web presence for performances, recordings, booking, and updates. Marguerite is the agent paired with that world: scoped, personal, and maintained for their work.
+          </p>
+          <div class="example-actions">
+            <a class="button primary" href="https://www.lesboyersisters.com">Visit site</a>
+            <span class="case-note">Agent: Marguerite</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-shell contact-section examples-contact">
+      <div>
+        <p class="eyebrow">Your version</p>
+        <h2>Have a workflow that needs its own system and agent?</h2>
+      </div>
+      <a class="button primary large" href="mailto:dave@codedif.com?subject=Project%20inquiry%20for%20Code%20D'If">dave@codedif.com</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year">2026</span> Code D'If</span>
+    <span>Custom software with maintained AI agents.</span>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
