@@ -25,7 +25,7 @@
   </header>
 
   <main>
-    <section class="section-band hero-band">
+    <section class="section-band hero-band" data-header-theme="light">
       <div class="hero shell">
         <div class="hero-copy">
           <div class="eyebrow"><span></span> Custom software + maintained AI agents</div>
@@ -55,7 +55,7 @@
       </div>
     </section>
 
-    <section id="model" class="section-band model-band">
+    <section id="model" class="section-band model-band" data-header-theme="dark">
       <div class="shell section-intro">
         <p class="kicker">The model</p>
         <h2>Build once. Operate continuously.</h2>
@@ -79,7 +79,7 @@
       </div>
     </section>
 
-    <section class="section-band proof-band">
+    <section class="section-band proof-band" data-header-theme="light">
       <div class="shell split-proof">
         <div>
           <p class="kicker">Why it exists</p>
@@ -89,7 +89,7 @@
       </div>
     </section>
 
-    <section class="section-band examples-band">
+    <section class="section-band examples-band" data-header-theme="dark">
       <div class="shell examples-preview">
         <div class="section-heading">
           <p class="kicker">Examples</p>
@@ -111,7 +111,7 @@
       </div>
     </section>
 
-    <section class="section-band cta-band">
+    <section class="section-band cta-band" data-header-theme="light">
       <div class="shell final-cta">
         <h2>Show me the workflow you want to stop doing by hand.</h2>
         <a class="button primary" href="mailto:dave@codedif.com?subject=Project%20inquiry%20for%20Code%20D'If">dave@codedif.com</a>
@@ -124,6 +124,27 @@
     <span>Custom software with maintained AI agents.</span>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const header = document.querySelector('.site-header');
+    const themedSections = Array.from(document.querySelectorAll('[data-header-theme]'));
+
+    function updateHeaderTheme() {
+      if (!header || !themedSections.length) return;
+      const probeY = Math.min(window.innerHeight - 1, header.getBoundingClientRect().bottom + 8);
+      const active = themedSections.find(section => {
+        const rect = section.getBoundingClientRect();
+        return rect.top <= probeY && rect.bottom > probeY;
+      });
+      const theme = active?.dataset.headerTheme || 'light';
+      header.classList.toggle('on-dark', theme === 'dark');
+      header.classList.toggle('on-light', theme !== 'dark');
+    }
+
+    updateHeaderTheme();
+    window.addEventListener('scroll', updateHeaderTheme, { passive: true });
+    window.addEventListener('resize', updateHeaderTheme);
+  </script>
 </body>
 </html>
